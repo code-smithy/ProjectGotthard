@@ -47,7 +47,11 @@ function build(base) {
   });
 }
 test('production routes, assets, metadata, feed and privacy boundary', () => {
-  verifyOutput('dist', process.env.BASE_PATH === '/' ? '' : (process.env.BASE_PATH || '/ProjectGotthard').replace(/\/$/, ''));
+  verifyOutput('dist', (process.env.BASE_PATH || '/').replace(/\/$/, ''));
+  assert.equal(readFileSync('dist/CNAME', 'utf8').trim(), 'projectgotthard.com');
+  const home = readFileSync('dist/index.html', 'utf8');
+  const origin = process.env.SITE_URL || 'https://projectgotthard.com';
+  assert.ok(home.includes(`rel="canonical" href="${new URL(`${(process.env.BASE_PATH || '/').replace(/\/$/, '')}/`, origin).href}"`));
 });
 test('drafts, major spoilers and future posts are absent at root and project base', () => {
   const fixtures = [

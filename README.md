@@ -15,7 +15,7 @@ npm test
 npm run preview
 ```
 
-The local address includes `/ProjectGotthard/`. `npm run verify` runs check, build and tests. Tests additionally build draft/spoiler/future fixtures at root and project base, reject malformed metadata and validate generated links. Fixtures are removed after testing. Do not edit content or run another Astro build concurrently with tests.
+The local address uses the root path `/`, matching the custom domain. `npm run verify` runs check, build and tests. Tests additionally build draft/spoiler/future fixtures at root and project base, reject malformed metadata and validate generated links. Fixtures are removed after testing. Do not edit content or run another Astro build concurrently with tests.
 
 ## Write a report
 
@@ -60,14 +60,14 @@ Keep approved images in `src/assets/images/`. Reference a hero image relative to
 
 ## GitHub Pages
 
-Nothing was deployed and no remote repository was created during setup. Defaults use this site's existing repository name:
+Defaults match the custom domain configured in GitHub Pages:
 
-- `site`: `https://code-smithy.github.io`
-- `base`: `/ProjectGotthard`
-- Proposed Pages address: `https://code-smithy.github.io/ProjectGotthard/` (not verified live).
+- `site`: `https://projectgotthard.com`
+- `base`: `/`
+- `public/CNAME`: `projectgotthard.com`
 
-Override `SITE_URL` and `BASE_PATH` for another destination. For a custom domain, use its origin as `SITE_URL` and `/` as `BASE_PATH`, configure Pages and add `public/CNAME`. In PowerShell, `$env:BASE_PATH = '/'` enables a root-path local preview.
+Override `SITE_URL` and `BASE_PATH` for another destination. To return to the default project Pages address, remove the custom domain in Pages, remove `public/CNAME`, set `SITE_URL` to `https://code-smithy.github.io` and `BASE_PATH` to `/ProjectGotthard`. Domain DNS must point to GitHub Pages and HTTPS must be provisioned by GitHub.
 
-CI runs on PRs and pushes to `main` using `npm ci` and `npm run verify`. Deployment is manual until content is approved: select **GitHub Actions** as the Pages source, then run **Deploy public blog** in Actions. It uses the official Astro and Pages actions with write permissions limited to deployment. To publish automatically later, add a push-to-main trigger to `deploy.yml`. Do not enable Pages for a repository containing private material. Remote Actions and live deployment have not been verified locally.
+CI runs on PRs and pushes to `main` using `npm ci` and `npm run verify`. **Deploy public blog** publishes automatically on pushes to `main` and can also run manually from Actions. It uses the official Astro and Pages actions with write permissions limited to deployment. Pages must use **GitHub Actions** as its source. Only commit approved public content to `main`.
 
 References: [Astro installation](https://docs.astro.build/en/install-and-setup/), [content collections](https://docs.astro.build/en/guides/content-collections/), [GitHub Pages](https://docs.astro.build/en/guides/deploy/github/).
