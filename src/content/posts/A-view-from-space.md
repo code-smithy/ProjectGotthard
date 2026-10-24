@@ -1,7 +1,7 @@
 ---
-title: "Welcome to Project Gotthard"
-description: "An introduction to the games vision."
-pubDate: 2026-10-23
+title: "A view from space"
+description: "I guess mountains are visible from there."
+pubDate: 2026-11-01
 tags: [development, setting]
 type: announcement
 draft: false

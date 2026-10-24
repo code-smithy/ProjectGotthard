@@ -1,7 +1,7 @@
 ---
 title: "Why Command Instead of Combat?"
 description: "The design intention behind the commander's perspective: preparation, delegated expeditions and decisions made with incomplete information."
-pubDate: 2026-10-24
+pubDate: 2026-12-24
 tags: [design, development]
 type: devlog
 draft: false
