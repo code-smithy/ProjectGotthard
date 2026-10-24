@@ -1,0 +1,5 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { roadmap } from '../data/roadmap';
+---
+<BaseLayout title="Development roadmap"><div class="container page-content"><header class="page-intro"><p class="eyebrow">Planning board / 03</p><h1>The work ahead.</h1><p class="lead">Public communication priorities for the programme. A direction of travel, without speculative release dates.</p></header><div class="notice">This is the public journal's editorial roadmap, not a promise of feature completion. Game milestones will be added when there is reviewed progress to share. Last reviewed: 24 October 2026.</div><div class="roadmap-grid">{roadmap.map(column => <section class="roadmap-column"><p class="eyebrow">{column.subtitle}</p><h2>{column.stage}</h2>{column.items.map(([title, text]) => <article><h3>{title}</h3><p>{text}</p></article>)}</section>)}</div></div></BaseLayout>

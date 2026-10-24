@@ -1,0 +1,14 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { path, dateLabel } from '../lib/urls';
+interface Props { post: CollectionEntry<'posts'>; index?: number; headingLevel?: 2 | 3 }
+const { post, index = 1, headingLevel = 2 } = Astro.props;
+const Heading = headingLevel === 2 ? 'h2' : 'h3';
+---
+<article class="post-card">
+  <div class="post-top"><span class="eyebrow">{post.data.type.replace('-', ' ')}</span><span class="file-number">FILE / {String(index).padStart(3, '0')}</span></div>
+  <time datetime={post.data.pubDate.toISOString()}>{dateLabel(post.data.pubDate)}</time>
+  <Heading class="post-title"><a href={path(`devlog/${post.id}/`)}>{post.data.title}</a></Heading>
+  <p>{post.data.description}</p>
+  <div class="post-bottom"><div class="tags">{post.data.tags.map(tag => <a href={path(`tags/${tag}/`)}>{tag}</a>)}</div><a class="arrow-link" href={path(`devlog/${post.id}/`)} aria-label={`Read ${post.data.title}`}>↗</a></div>
+</article>

@@ -1,0 +1,21 @@
+---
+import { render } from 'astro:content';
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { publicPosts } from '../../lib/posts';
+import { path, dateLabel } from '../../lib/urls';
+export async function getStaticPaths() {
+  const posts = await publicPosts();
+  return posts.map((post, index) => ({ params: { slug: post.id }, props: { post, newer: posts[index - 1], older: posts[index + 1] } }));
+}
+const { post, newer, older } = Astro.props;
+const { Content, headings } = await render(post);
+const toc = headings.filter(h => h.depth === 2);
+const schema = { '@context': 'https://schema.org', '@type': 'BlogPosting', headline: post.data.title, description: post.data.description, datePublished: post.data.pubDate.toISOString(), ...(post.data.updatedDate ? { dateModified: post.data.updatedDate.toISOString() } : {}), author: { '@type': 'Organization', name: post.data.author }, mainEntityOfPage: new URL(path(`devlog/${post.id}/`), Astro.site).href };
+---
+<BaseLayout title={post.data.title} description={post.data.description} article>
+  <script type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, '\\u003c')} />
+  <article class="container page-content"><header class="page-intro"><p class="breadcrumb"><a href={path()}>Home</a> / <a href={path('devlog/')}>The Gotthard Files</a></p><p class="eyebrow">{post.data.type.replace('-', ' ')} {post.data.spoilerLevel === 'minor' && '· Minor spoilers'}</p><h1>{post.data.title}</h1><p class="lead">{post.data.description}</p><div class="article-meta"><time datetime={post.data.pubDate.toISOString()}>{dateLabel(post.data.pubDate)}</time><span>By {post.data.author}</span>{post.data.updatedDate && <span>Updated {dateLabel(post.data.updatedDate)}</span>}<div class="tags">{post.data.tags.map(tag => <a href={path(`tags/${tag}/`)}>{tag}</a>)}</div></div></header>
+    <div class="article-grid"><aside class="toc" aria-label="On this page">{toc.length > 1 && <><p class="eyebrow">In this file</p><ul>{toc.map(h => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ul></>}</aside><div class="prose">{post.data.heroImage && <Image src={post.data.heroImage} alt={post.data.heroAlt!} widths={[640, 960]} sizes="(max-width: 700px) 100vw, 740px" />}<Content /><hr /><p>Discover <a href={path('about/')}>Project Gotthard</a> or <a href={path('rss.xml')}>subscribe to future reports via RSS</a>.</p><nav class="post-nav" aria-label="Adjacent reports">{newer && <a href={path(`devlog/${newer.id}/`)}>← Newer report<br />{newer.data.title}</a>}{older && <a href={path(`devlog/${older.id}/`)}>Older report →<br />{older.data.title}</a>}</nav></div></div>
+  </article>
+</BaseLayout>

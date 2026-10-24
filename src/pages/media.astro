@@ -1,0 +1,6 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AlpineDiagram from '../components/AlpineDiagram.astro';
+import { path } from '../lib/urls';
+---
+<BaseLayout title="Media" description="Approved visuals and development snapshots for Project Gotthard, with clear labels for artwork and gameplay."><div class="container page-content"><header class="page-intro"><p class="eyebrow">Visual archive / 02</p><h1>From behind the mountain.</h1><p class="lead">A place for approved screenshots, work in progress and artwork, with context for every image.</p></header><div class="notice">Gameplay screenshots have not been published here yet. Development captures will be added after review.</div><div class="media-drawing"><AlpineDiagram /></div><div class="prose"><h2>Alpine survey illustration</h2><p><strong>Website artwork.</strong> An original vector schematic created for The Gotthard Files. It establishes the site's visual direction; it does not depict an in-game location or interface.</p><p>Credit: Project Gotthard website. No third-party imagery or game assets are used in this illustration.</p><a class="text-link" href={path('devlog/')}>Read the development journal →</a></div></div></BaseLayout>

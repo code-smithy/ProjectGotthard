@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { publicPosts } from '../../lib/posts';
+import { path } from '../../lib/urls';
+const posts = await publicPosts();
+const tags = [...new Set(posts.flatMap(p => p.data.tags))].sort();
+---
+<BaseLayout title="The Gotthard Files" description="Follow the development of Project Gotthard through design notes, programme briefings and reports from behind the mountain.">
+  <div class="container page-content"><header class="page-intro"><p class="eyebrow">The development archive</p><h1>The Gotthard Files</h1><p class="lead">Design decisions, field notes and work in progress. An open record of building Project Gotthard.</p></header>
+  <nav class="filter-bar" aria-label="Filter reports by topic"><a href={path('devlog/')} aria-current="page">All reports</a>{tags.map(tag => <a href={path(`tags/${tag}/`)}>{tag}</a>)}</nav>
+  <label class="search-box" hidden id="search-label">Search reports<input id="report-search" type="search" placeholder="Search titles, topics and descriptions" aria-controls="reports" /></label><p id="search-status" class="small-note" role="status" hidden></p>
+  <div id="reports" class="post-grid">{posts.map((post, index) => <div data-report data-search={`${post.data.title} ${post.data.description} ${post.data.tags.join(' ')}`.toLowerCase()}><PostCard post={post} index={index + 1} /></div>)}</div></div>
+</BaseLayout>
+<script>
+  const search = document.querySelector<HTMLInputElement>('#report-search');
+  const label = document.querySelector<HTMLElement>('#search-label');
+  const status = document.querySelector<HTMLElement>('#search-status');
+  const reports = [...document.querySelectorAll<HTMLElement>('[data-report]')];
+  if (search && label && status) {
+    label.hidden = false;
+    search.addEventListener('input', () => {
+      const query = search.value.trim().toLowerCase();
+      let count = 0;
+      for (const report of reports) { report.hidden = !report.dataset.search?.includes(query); if (!report.hidden) count++; }
+      status.hidden = false;
+      status.textContent = `${count} ${count === 1 ? 'report' : 'reports'} found`;
+    });
+  }
+</script>
