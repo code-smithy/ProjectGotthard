@@ -1,14 +1,14 @@
 ---
 title: "Welcome to Project Gotthard"
-description: "An introduction to the game, the commander's role and The Gotthard Files: a public journal from behind the mountain."
-pubDate: 2026-10-24
+description: "An introduction to the games vision."
+pubDate: 2026-10-23
 tags: [development, setting]
 type: announcement
 draft: false
 spoilerLevel: none
 ---
 
-Project Gotthard is the official title of an independent science-fiction command and management game set in an alternate October 1994. The Gotthard Files is its public development journal.
+Project Gotthard is the official title of an independent science-fiction command and management game set in an alternate 1994. The Gotthard Files is its public development journal.
 
 ## Behind the mountain
 
@@ -18,7 +18,7 @@ The game is being built around the commander's perspective: the people you send,
 
 ## What these files will cover
 
-This journal is a place to share the development process and explain the game. Expect focused design notes, discussion of systems and clearly labelled development images when they are ready to be shared.
+This journal is a place to share the development process and explain the game. Expect focused design notes, discussion of systems and clearly labelled development images when they are ready to be shared. This is a project built by a single person with the help of friends who share the vision and playtest.
 
 Posts will distinguish current work from future ideas. This introduction describes the intended experience; it is not an announcement of a finished game or a public build.
 

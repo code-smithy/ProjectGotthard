@@ -8,7 +8,7 @@ draft: false
 spoilerLevel: none
 ---
 
-Project Gotthard begins with a question: what does exploration feel like when you are responsible for the programme, but you are not the person standing on the other side?
+Project Gotthard begins with a question: what does exploration feel like when you are responsible for the programme, but you are not the person standing on the other side? The people who are sent out by you trust your judgment, just as you must trust their skills.
 
 ## Preparation is a decision
 
