@@ -1,1 +1,16 @@
-:root{--ink:#172230;--midnight:#101b29;--paper:#f2efe7;--white:#fff;--slate:#607080;--muted:#536273;--brass:#c6a575;--alert:#a5463b;--line:#d3d1ca;--link:#89402e;--sans:Arial,Helvetica,sans-serif;--serif:Georgia,'Times New Roman',serif;--mono:'Courier New',monospace}
+:root {
+  --ink: #10180f;
+  --midnight: #151e17;
+  --paper: #a5ad8d;
+  --white: #e7ebd1;
+  --slate: #4b5742;
+  --muted: #35432e;
+  --brass: #e2cb65;
+  --alert: #754321;
+  --line: #526046;
+  --link: #263f23;
+  --sans: 'Courier New', Courier, monospace;
+  --serif: 'Courier New', Courier, monospace;
+  --mono: 'Courier New', Courier, monospace;
+  --bevel: inset 1px 1px #e2e8c8, inset -1px -1px #283322;
+}
