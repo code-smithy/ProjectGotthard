@@ -34,10 +34,12 @@ function verifyOutput(dir, base) {
     }
   }
   const rss = readFileSync(join(dir, 'rss.xml'), 'utf8');
-  const articleCount = output.filter(file => /[\\/]devlog[\\/][^\\/]+[\\/]index\.html$/.test(file)).length;
-  assert.equal((rss.match(/<item>/g) || []).length, articleCount);
-  assert.match(rss, /Welcome to Project Gotthard/);
-  assert.ok(rss.includes(`${base}/devlog/welcome-to-project-gotthard/`));
+  const articles = output.filter(file => /[\\/]devlog[\\/][^\\/]+[\\/]index\.html$/.test(file));
+  assert.equal((rss.match(/<item>/g) || []).length, articles.length);
+  for (const article of articles) {
+    const slug = article.match(/[\\/]devlog[\\/]([^\\/]+)[\\/]index\.html$/)[1];
+    assert.ok(rss.includes(`${base}/devlog/${slug}/`), `RSS missing article ${slug}`);
+  }
   assert.doesNotMatch(all, /EXCLUSION_SENTINEL/);
 }
 const astro = resolve('node_modules/astro/bin/astro.mjs');
@@ -64,10 +66,16 @@ test('drafts, major spoilers and future posts are absent at root and project bas
     return file;
   });
   try {
+    const published = resolve('src/content/posts/qa-published.md');
+    assert.ok(!existsSync(published));
+    writeFileSync(published, '---\ntitle: "Published QA article"\ndescription: "This published fixture must appear in every public build."\npubDate: 2000-01-01\ntags: [development]\n---\nPublished QA body.\n');
+    fixtures.push(published);
     for (const base of ['/ProjectGotthard', '/']) {
       const result = build(base);
       assert.equal(result.status, 0, `${result.stdout}\n${result.stderr}`);
       verifyOutput('.test-build', base === '/' ? '' : base);
+      assert.ok(existsSync('.test-build/devlog/qa-published/index.html'));
+      assert.match(readFileSync('.test-build/rss.xml', 'utf8'), /Published QA article/);
       assert.equal(existsSync('.test-build/tags/technical/index.html'), existsSync('dist/tags/technical/index.html'), 'excluded posts must not introduce a topic');
       for (const name of ['draft', 'major', 'future']) assert.ok(!existsSync(`.test-build/devlog/qa-exclusion-${name}/index.html`));
     }
