@@ -1,7 +1,7 @@
 ---
 title: "Where to begin..."
 description: "I can see the mountain, but not its peak"
-pubDate: 2026-10-25
+pubDate: 2026-10-25T00:00:00+02:00
 tags: [development]
 type: announcement
 draft: false
