@@ -1,6 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AlpineDiagram from '../components/AlpineDiagram.astro';
+import ReconScreenshot from '../components/ReconScreenshot.astro';
 import { path } from '../lib/urls';
 ---
-<BaseLayout title="Media" description="Approved visuals and development snapshots for Project Gotthard, with clear labels for artwork and gameplay."><div class="container page-content"><header class="page-intro"><p class="eyebrow">Visual archive / 02</p><h1>From inside the mountain.</h1><p class="lead">Screenshots, work in progress and artwork, hopefully with context.</p></header><div class="notice">Gameplay screenshots have not been published here yet since it consist mostly of AI-Placeholders right now.</div><div class="media-drawing"><AlpineDiagram /></div><div class="prose"><h2>Alpine survey illustration</h2><p><strong>Website artwork.</strong> An AI-Created vector schematic created for The Gotthard Files. It's here because I needed something as a placeholder; it does not depict an in-game location or interface.</p><p>Credit: Project Gotthard website. No third-party imagery or game assets are used in this illustration.</p><a class="text-link" href={path('devlog/')}>Read the development journal →</a></div></div></BaseLayout>
+<BaseLayout title="Media" description="In-game screenshots from Project Gotthard, beginning with a recon mission report on the command workstation.">
+  <div class="container page-content">
+    <header class="page-intro">
+      <p class="eyebrow">Visual archive / 02</p>
+      <h1>From inside the mountain.</h1>
+      <p class="lead">A look inside Project Gotthard, through screenshots from the game in development.</p>
+    </header>
+    <ReconScreenshot />
+    <div class="prose">
+      <h2>Recon mission report</h2>
+      <p>A recon mission report, viewed through the command workstation's communications inbox. A received terrain image and environmental readings offer a first glimpse of the world beyond the gate.</p>
+      <p><strong>Work in progress.</strong> This screenshot shows the game during development. The interface, visual style and graphics are subject to change as development continues.</p>
+      <a class="text-link" href={path('devlog/')}>Read the development journal →</a>
+    </div>
+  </div>
+</BaseLayout>

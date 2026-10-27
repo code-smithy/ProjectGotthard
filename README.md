@@ -39,7 +39,7 @@ Review text, images and links before setting `draft: false`. Drafts, future-date
 
 **Privacy:** This repository is exclusively for approved public material. Never add internal game-source links, repository names, secrets or unreleased lore. Draft filtering protects generated output, not source history. Sensitive material must stay outside this source tree and `public/`; everything in `public/` is copied verbatim. There is no source-repository CTA or automatic content sync.
 
-The three launch articles are editorial introductions based on the approved public premise. They describe intentions, not verified shipped features. Review wording and dates before launch. No screenshots were supplied. The original inline SVG Alpine schematic is labelled website artwork; no third-party visual assets are used.
+The three launch articles are editorial introductions based on the approved public premise. They describe intentions, not verified shipped features. Review wording and dates before launch. The first in-game screenshot shows a recon mission report on the command workstation. Source: a development capture supplied by the Project Gotthard developer on 27 October 2026, stored in `src/assets/images/recon-mission-report.png`. It appears on the homepage and media page and is labelled work in progress; the interface, visual style and graphics may change.
 
 ## Structure
 

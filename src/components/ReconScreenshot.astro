@@ -1,0 +1,16 @@
+---
+import { Image } from 'astro:assets';
+import reconReport from '../assets/images/recon-mission-report.png';
+---
+<figure class="game-screenshot">
+  <a href={reconReport.src} aria-label="View the recon mission report screenshot at full size">
+    <Image src={reconReport} alt="In-game communications window showing a recon mission report with a received terrain image and atmospheric readings on the command workstation." widths={[640, 960, 1280, 1920]} sizes="(max-width: 760px) 100vw, 1240px" format="webp" />
+  </a>
+  <figcaption>Recon mission report · In-game screenshot · Work in progress</figcaption>
+</figure>
+<style>
+  .game-screenshot { margin: 0; min-width: 0; }
+  a { display: block; }
+  img { display: block; width: 100%; height: auto; }
+  figcaption { margin-top: 12px; color: var(--muted); }
+</style>
