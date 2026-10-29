@@ -52,9 +52,11 @@ The three launch articles are editorial introductions based on the approved publ
 - `src/styles/`: palette, typography and responsive layouts.
 - `tests/build.test.mjs`: generated-output and publishing-boundary checks.
 
-The archive has progressive search over titles, descriptions and topics. Articles and topic navigation work without JavaScript. Pagination is deferred while there are three posts; add it before exceeding 12. Social metadata uses a text summary until an approved preview image exists.
+The archive has progressive search over titles, descriptions and topics. Articles and topic navigation work without JavaScript. Pagination is deferred while there are three posts; add it before exceeding 12. Social metadata uses the approved Project Gotthard logo as its preview image.
 
 ## Images
+
+Approved geometric logos supplied by the Project Gotthard developer on 29 October 2026 are stored in `public/branding/`, with original SVG and PNG exports preserved. The compact insignia and favicon reuse the supplied vector geometry. The Media page provides all five original exports; the header and footer use the compact insignia. No additional licence grant is implied.
 
 Keep approved images in `src/assets/images/`. Reference a hero image relative to the Markdown file with descriptive `heroAlt`; Astro optimizes it. For body images, use meaningful Markdown alt text and captions identifying Screenshot, Work in Progress or Concept. Record creator, licence and source for added assets. Never represent illustration as gameplay.
 

@@ -56,3 +56,11 @@ nav a[aria-current],.filter-bar a[aria-current]{background:#8c9977;color:#10180f
 @media(min-width:1500px){.hero-grid{padding-block:40px 32px}}
 @media(max-width:1050px){.container{width:calc(100% - 32px)}.header-inner{gap:12px}.hero-grid{gap:20px}nav{gap:5px}nav a{padding:7px 9px}.setting-section{margin-inline:16px}}
 @media(max-width:700px){body{padding:7px}main{padding:7px}.container{width:calc(100% - 24px)}.header-inner{padding-block:12px;gap:14px}.brand{font-size:12px}.brand-mark{font-size:28px;width:34px;height:34px}nav{gap:5px}nav a{font-size:10px;padding:8px 7px;flex:1;text-align:center}.hero::before{font-size:8px;padding-inline:5px;letter-spacing:0}.hero-grid{grid-template-columns:1fr;padding-block:22px;gap:22px}.hero h1{font-size:clamp(1.7rem,7.5vw,2.8rem)}.hero .eyebrow{font-size:8px}.hero-lead{font-size:13px}.hero-motto{font-size:11px}.button{padding:10px 12px;gap:14px;font-size:11px}.actions{gap:16px}.hero-strip{gap:8px;font-size:8px;padding:6px}.section{padding-block:30px}.section-heading{align-items:start;gap:12px}.feature-grid{gap:14px}.feature-grid h3{margin-top:0}.setting-section{margin-inline:12px;padding-block:22px}.setting-grid{gap:12px}.setting-grid h2{font-size:1.8rem}.post-card{padding:18px}.follow-section{padding:24px 18px}.follow-inner h2{font-size:1.6rem}.site-footer{padding:20px}.page-intro h1{font-size:2rem}.prose p,.prose li{font-size:14px}.page-intro .lead{font-size:14px}.footer-bottom{line-height:1.8}}
+
+/* Supplied Project Gotthard identity, kept on a light field for contrast. */
+.brand img.brand-mark{display:block;flex-shrink:0;object-fit:contain;width:56px;height:40px;padding:3px;background:#dfded8;border:1px solid #435238}
+.logo-archive{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:32px;align-items:center;margin-bottom:40px}
+.logo-preview{background:#dfded8;border:2px solid #435238;padding:16px}
+.logo-preview img{display:block;width:100%;height:auto}
+.logo-downloads{padding-left:20px;font-size:13px;line-height:2}
+@media(max-width:700px){.logo-archive{grid-template-columns:1fr;gap:20px}.logo-preview{max-width:320px}.brand img.brand-mark{width:48px;height:35px}}

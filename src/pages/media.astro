@@ -3,13 +3,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ReconScreenshot from '../components/ReconScreenshot.astro';
 import { path } from '../lib/urls';
 ---
-<BaseLayout title="Media" description="In-game screenshots from Project Gotthard, beginning with a recon mission report on the command workstation.">
+<BaseLayout title="Media" description="Project Gotthard logos and in-game screenshots, including a recon mission report on the command workstation.">
   <div class="container page-content">
     <header class="page-intro">
       <p class="eyebrow">Visual archive / 02</p>
       <h1>From inside the mountain.</h1>
-      <p class="lead">A look inside Project Gotthard, through screenshots from the game in development.</p>
+      <p class="lead">A look inside Project Gotthard, through its insignia and screenshots from the game in development.</p>
     </header>
+    <section class="logo-archive" aria-labelledby="logo-heading">
+      <div class="logo-preview"><img src={path('branding/gotthard-geometric-transparent.svg')} width="1060" height="1060" alt="Project Gotthard logo: a split triangular insignia surrounding a compass star, above the wordmark and a red underline" /></div>
+      <div><p class="eyebrow">Programme identity</p><h2 id="logo-heading">Project Gotthard logo</h2><p>The geometric insignia and wordmark, available with a solid or transparent background.</p>
+        <ul class="logo-downloads">
+          <li><a href={path('branding/gotthard-geometric.svg')} download>Logo — SVG</a> / <a href={path('branding/gotthard-geometric.png')} download>PNG</a></li>
+          <li><a href={path('branding/gotthard-geometric-transparent.svg')} download>Transparent — SVG</a> / <a href={path('branding/gotthard-geometric-transparent.png')} download>PNG</a></li>
+          <li><a href={path('branding/gotthard-geometric-editable-text.svg')} download>Editable text — SVG</a></li>
+        </ul>
+      </div>
+    </section>
     <ReconScreenshot />
     <div class="prose">
       <h2>Recon mission report</h2>

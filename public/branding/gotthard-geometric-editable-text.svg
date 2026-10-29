@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="1060" viewBox="0 0 360 360">
+<title>Project Gotthard - geometric insignia</title>
+<desc>Geometric split triangular insignia with compass star and expanded Agency FB Bold lettering, inspired by 1990s military science fiction.</desc>
+<metadata>Artwork export for repository version 0.136.0; no game or save changes.</metadata><rect width="360" height="360" fill="#deddd8"/><g fill="#081b27">
+<path d="M146 43H172V77L98 199H50Z"/>
+<path d="M188 43H214L310 199H262L188 77Z"/>
+<path d="M46 205H145V232H32Z"/>
+<path d="M215 205H314L328 232H215Z"/>
+<path d="M178 25H182V105L185 139L200 129L190 145L223 149V153L190 157L200 173L185 163L182 213H178L175 163L160 173L170 157L137 153V149L170 145L160 129L175 139L178 105Z"/><text x="70" y="270" font-family="Agency FB" font-weight="700" font-size="27" textLength="220" lengthAdjust="spacingAndGlyphs" letter-spacing="7">PROJECT</text>
+<text x="17" y="327" font-family="Agency FB" font-weight="700" font-size="58" textLength="326" lengthAdjust="spacingAndGlyphs">GOTTHARD</text></g><rect x="17" y="339" width="326" height="5" fill="#c62a32"/></svg>
