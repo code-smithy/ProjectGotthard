@@ -34,6 +34,14 @@ const nav = [['The game', 'about/'], ['Devlog', 'devlog/'], ['Media', 'media/'],
       <div class="container header-inner">
         <a class="brand" href={path()} aria-label="Project Gotthard home"><img class="brand-mark" src={path('branding/gotthard-insignia.svg')} width="56" height="40" alt="" /><span>PROJECT GOTTHARD<small>THE GOTTHARD FILES</small></span></a>
         <nav aria-label="Primary navigation">{nav.map(([label, route]) => <a href={path(route)} aria-current={Astro.url.pathname.startsWith(path(route)) ? 'page' : undefined}>{label}</a>)}</nav>
+        <div class="header-socials" role="group" aria-label="Follow Project Gotthard">
+          {links.youtube && <a class="social-logo" href={links.youtube} aria-label="Project Gotthard on YouTube" title="YouTube">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z" /></svg>
+          </a>}
+          {links.x && <a class="social-logo" href={links.x} aria-label="Project Gotthard on X" title="X">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.64 7.584H.47l8.6-9.835L0 1.154h7.594l5.243 6.932 6.064-6.933Zm-1.29 19.49h2.039L6.487 3.24H4.3l13.31 17.403Z" /></svg>
+          </a>}
+        </div>
         <a class="header-follow" href={path('devlog/')}>Follow development <span aria-hidden="true">↗</span></a>
       </div>
     </header>
