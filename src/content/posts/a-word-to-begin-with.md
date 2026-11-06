@@ -47,6 +47,6 @@ people that would potentially want to play something niche like this. I'll go in
 I guess I'll share parts of the design document and vision, as well as some screenshots from the game itself. I am aware
 that this only speaks to a very small group of people. And I hope you are one of them.
 
-See you next post
+See you next post.
 
 Mark

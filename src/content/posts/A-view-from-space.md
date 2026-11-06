@@ -42,6 +42,10 @@ somewhere: a concept, a few ideas, and some lines of code.
 
 And now here I am. (If anybody asks how I'm going to move forward with all of this, tell them I'll *manage*. And point them towards this blog while you're at it.)
 
+See you next post.
+
+Mark
+
 ---
 
 *Needless to say, all these Stargate SG-1 references will be removed after the prototype stage. Project Gotthard will have 
