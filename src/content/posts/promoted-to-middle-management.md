@@ -4,7 +4,7 @@ description: "Turning a collection of management screens into an actual military
 pubDate: 2026-11-21
 tags: [design, development, art]
 type: devlog
-draft: true
+draft: false
 spoilerLevel: none
 ---
 

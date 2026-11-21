@@ -5,7 +5,25 @@ import { path } from '../lib/urls';
 import { Image } from 'astro:assets';
 import commandCalendar from '../assets/images/command-calendar-weekly-view.png';
 import missionTeam from '../assets/images/mission-team-people.png';
+import commandersOffice from '../assets/images/commanders_office.png';
+import commandersMonitor from '../assets/images/commanders_monitor.png';
 const screenshots = [
+  {
+    image: commandersOffice,
+    title: 'The commander’s office',
+    alt: 'The commander’s concrete-walled office, with a desk, CRT monitor, personnel folder, facility map and shelves of binders.',
+    description: 'The Physical Workspace brings command into a 3D office, with a facility map, personnel folder and command terminal providing access to the programme’s management systems.',
+    article: 'promoted-to-middle-management',
+    articleTitle: 'A Room with a View. Of a Concrete Wall.',
+  },
+  {
+    image: commandersMonitor,
+    title: 'The command terminal',
+    alt: 'A close-up of the office CRT monitor showing the command overview, operational status, active operations and today’s schedule.',
+    description: 'A closer look at the commander’s CRT monitor. The command overview presents team readiness, active operations and the day’s schedule through a period-inspired display.',
+    article: 'promoted-to-middle-management',
+    articleTitle: 'A Room with a View. Of a Concrete Wall.',
+  },
   {
     image: commandCalendar,
     title: 'Command calendar — weekly view',
@@ -24,7 +42,7 @@ const screenshots = [
   },
 ];
 ---
-<BaseLayout title="Media" description="Project Gotthard logos and in-game screenshots, including a recon mission report on the command workstation.">
+<BaseLayout title="Media" description="Project Gotthard logos and in-game screenshots, from the commander’s office and CRT terminal to mission preparation and recon reports.">
   <div class="container page-content">
     <header class="page-intro">
       <p class="eyebrow">Visual archive / 02</p>

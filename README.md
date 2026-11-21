@@ -56,7 +56,7 @@ The archive has progressive search over titles, descriptions and topics. Article
 
 ## Images
 
-The homepage uses `src/assets/images/recon-report-old.png`, the earlier recon intelligence reviewed during mission preparation in **Going on a mission**. The Media page retains the original communications-inbox capture and also includes this recon review, `mission-team-people.png` from the same article, and `command-calendar-weekly-view.png` from **A View from Space**. These developer-supplied in-game captures are labelled work in progress and link to their corresponding articles; team portraits are placeholders. No additional licence grant is implied.
+The homepage uses `src/assets/images/commanders_office.png`, the Physical Workspace introduced in **A Room with a View. Of a Concrete Wall.** The Media page includes this office and `commanders_monitor.png`, both developer-supplied in-game captures added on 21 November 2026. It also retains the original communications-inbox capture, `recon-report-old.png` and `mission-team-people.png` from **Going on a mission**, and `command-calendar-weekly-view.png` from **A View from Space**. These captures are labelled work in progress and link to their corresponding articles; team portraits are placeholders. No additional licence grant is implied.
 
 Approved geometric logos supplied by the Project Gotthard developer on 29 October 2026 are stored in `public/branding/`, with original SVG and PNG exports preserved. The compact insignia and favicon reuse the supplied vector geometry. The Media page provides all five original exports; the header and footer use the compact insignia. No additional licence grant is implied.
 
